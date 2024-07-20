@@ -123,14 +123,60 @@ display: flex;
     color: #ffeef2;
 } */
 
+
+
 :root {
   --main-color: #ef305b;
   --section-padding: 70px;
+
+}
+#sideBar{
+
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 999;
+ white-space: nowrap;
+  display: flex;
+  align-items: flex-start;
+
+}
+#sideBar .side-box{
+  padding: 10px;
+  background-color: rgb(184, 167, 167);
+  display: none;
+}
+#sideBar i{
+  padding: 10px;
+  cursor: pointer;
+  background-color: #ef305b;
+}
+#sideBar .box-color{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: #09c;
+  cursor: pointer;
+}
+
+.loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(59, 51, 51);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
 nav .active {
   color: var(--main-color) !important;
 }
-
+.navbar{
+  transition: background-color 2s;
+}
 header {
   background-image: url(../images/home-bg.jpg);
   background-size: cover;
@@ -141,6 +187,7 @@ header {
 * {
   text-decoration: none !important;
 }
+
 header ul {
   display: flex;
 }
@@ -274,4 +321,31 @@ header ul a {
   border-radius: 50%;
   text-indent: 0;
   overflow: hidden;
+}
+
+/* loader */
+.loader {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+.loader:before,
+.loader:after {
+  content:"";
+  display: block;
+  border: 32px solid transparent;
+  border-top-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: weld-rotate 2s infinite ease-in;
+}
+.loader:before {
+  border-color: transparent  transparent transparent #FF3D00;
+  animation-delay: 0.5s;
+}
+@keyframes weld-rotate {
+  0% , 25% {transform: rotate(0deg)}
+  50% , 75% {transform: rotate(180deg)}
+  100% {transform: rotate(360deg)}
 }
